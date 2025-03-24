@@ -14,8 +14,11 @@ class MainWindow(QMainWindow):
  
         # Título da janela
         self.setWindowTitle('Calculadora')
- 
+        
     def adjustFixedSize(self):
          # Definir um tamanho padrão para a calculadora
         self.adjustSize()
         self.setFixedSize(self.width(), self.height())
+        
+    def addWidgetToVLayout(self, widget: QWidget):
+        self.v_layout.addWidget(widget)
