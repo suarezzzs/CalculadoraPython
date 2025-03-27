@@ -1,24 +1,23 @@
 from PySide6.QtWidgets import QMainWindow, QVBoxLayout, QWidget
- 
+
 class MainWindow(QMainWindow):
- 
     def __init__(self, parent: QWidget | None = None, *args, **kwargs) -> None:
         super().__init__(parent, *args, **kwargs)
 
-
-        # Configurando o layout básico
+        # Criando o widget central e o layout vertical
         self.cw = QWidget()
-        self.v_layout = QVBoxLayout()
-        self.cw.setLayout(self.v_layout)
+        self.vLayout = QVBoxLayout()
+        self.cw.setLayout(self.vLayout)
         self.setCentralWidget(self.cw)
- 
-        # Título da janela
+
+        # Definindo o título da janela
         self.setWindowTitle('Calculadora')
-        
+
+    # Ajusta o tamanho fixo da janela com base no conteúdo
     def adjustFixedSize(self):
-         # Definir um tamanho padrão para a calculadora
         self.adjustSize()
         self.setFixedSize(self.width(), self.height())
-        
-    def addWidgetToVLayout(self, widget: QWidget):
-        self.v_layout.addWidget(widget)
+
+    # Adiciona um widget ao layout vertical
+    def addToVLayout(self, widget: QWidget):
+        self.vLayout.addWidget(widget)
